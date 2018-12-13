@@ -1,15 +1,17 @@
-import { Category } from './category.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Category } from './category.model';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, flatMap } from 'rxjs/operators';
+import { environment } from './../../../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  private apiPath = 'api/categories';
+  private apiPath = `${environment.api}/categories`;
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Category[]> {
