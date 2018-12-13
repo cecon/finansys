@@ -10,9 +10,11 @@ import { environment } from './../../../../environments/environment';
   providedIn: 'root'
 })
 export class CategoryService {
-
-  private apiPath = `${environment.api}/categories`;
-  constructor(private http: HttpClient) { }
+  private apiPath: string;
+  constructor(private http: HttpClient) {
+    console.log(environment);
+    this.apiPath = `${environment.api}/categories`;
+  }
 
   getAll(): Observable<Category[]> {
     return this.http.get(this.apiPath).pipe(
@@ -38,7 +40,7 @@ export class CategoryService {
 
   delete(category: Category): Observable<Category> {
     const url = `${this.apiPath}/${category.id}`;
-    return this.http.delete(this.apiPath).pipe(
+    return this.http.delete(url).pipe(
       catchError(this.handleError),
       map(() => null)
     );
