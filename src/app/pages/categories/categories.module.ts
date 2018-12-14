@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,6 +10,7 @@ import { CategoryFormComponent } from './category-form/category-form.component';
   declarations: [CategoryListComponent, CategoryFormComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     CategoriesRoutingModule
   ]
 })
