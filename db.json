@@ -11,13 +11,5 @@
       "description": "Gastos com restaurantes e mercado"
     }
   ],
-  "entries": [
-    {
-      "id": 1, "name":"Mercado", "categoryId": 6, "category": {
-        "id": 6,
-        "name": "Alimentação",
-        "description": "Gastos com restaurantes e mercado"
-      }, "paid": true, "date": "14/10/2018", "amount": "15,00", "type": "expense"
-    }
-  ]
+  "entries": []
 }
