@@ -14,6 +14,11 @@
       "id": 7,
       "name": "Salário",
       "description": "Entradas diversas"
+    },
+    {
+      "id": 8,
+      "name": "Teste",
+      "description": "Teste"
     }
   ],
   "entries": [
@@ -25,11 +30,11 @@
       "amount": "10,00",
       "date": "17/12/2018",
       "paid": false,
-      "categoryId": "5",
+      "categoryId": "8",
       "category": {
-        "id": 5,
-        "name": "Freelas",
-        "description": "Trabalhos como freelancer"
+        "id": 8,
+        "name": "Teste",
+        "description": "Teste"
       }
     },
     {
