@@ -2,7 +2,7 @@ import { Category } from './../../categories/shared/category.model';
 export class Entry {
     static types = {
         expense: 'Despesa',
-        renevue: 'Receita'
+        revenue: 'Receita'
     };
 
     constructor() {

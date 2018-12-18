@@ -13,14 +13,49 @@
   ],
   "entries": [
     {
-      "id": 1,
+      "id": 2,
+      "name": "Alimentação",
+      "description": "Restauramte por kolo",
+      "type": "revenue",
+      "amount": "10,00",
+      "date": "17/12/2018",
+      "paid": true,
+      "categoryId": "6",
+      "category": {
+        "id": 6,
+        "name": "Alimentação",
+        "description": "Gastos com restaurantes e mercado"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Alimentação",
+      "description": "Restauramte por kolo",
+      "type": "revenue",
+      "amount": "10,00",
+      "date": "17/12/2018",
+      "paid": false,
+      "categoryId": "5",
+      "category": {
+        "id": 5,
+        "name": "Freelas",
+        "description": "Trabalhos como freelancer"
+      }
+    },
+    {
+      "id": 4,
       "name": "Alimentação",
       "description": "asdsdsds",
       "type": "expense",
       "amount": "10,00",
-      "date": "04/12/2018",
-      "paid": false,
-      "categoryId": "6"
+      "date": "17/12/2018",
+      "paid": true,
+      "categoryId": "5",
+      "category": {
+        "id": 5,
+        "name": "Freelas",
+        "description": "Trabalhos como freelancer"
+      }
     }
   ]
 }
