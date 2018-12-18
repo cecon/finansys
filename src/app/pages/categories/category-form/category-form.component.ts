@@ -1,7 +1,7 @@
 import { CategoryService } from './../shared/category.service';
 import { Category } from './../shared/category.model';
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import * as toastr from 'toastr';

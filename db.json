@@ -9,24 +9,14 @@
       "id": 6,
       "name": "Alimentação",
       "description": "Gastos com restaurantes e mercado"
+    },
+    {
+      "id": 7,
+      "name": "Salário",
+      "description": "Entradas diversas"
     }
   ],
   "entries": [
-    {
-      "id": 2,
-      "name": "Alimentação",
-      "description": "Restauramte por kolo",
-      "type": "revenue",
-      "amount": "10,00",
-      "date": "17/12/2018",
-      "paid": true,
-      "categoryId": "6",
-      "category": {
-        "id": 6,
-        "name": "Alimentação",
-        "description": "Gastos com restaurantes e mercado"
-      }
-    },
     {
       "id": 3,
       "name": "Alimentação",
