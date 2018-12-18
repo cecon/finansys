@@ -1,3 +1,5 @@
+import { Category } from './../../categories/shared/category.model';
+import { CategoryService } from './../../categories/shared/category.service';
 import { EntryService } from './../shared/entry.service';
 import { Entry } from './../shared/entry.model';
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
@@ -19,8 +21,32 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
   serverErrorMessage: string[] = null;
   submittingForm = false;
   entry: Entry = new Entry();
+  categories: Category[];
+
+  imaskConfig = {
+    mask: Number,
+    scale: 2,
+    thousendsSeparator: '',
+    padFractionalZeros: true,
+    normalizeZeros: true,
+    radix: ','
+  };
+
+  ptBR = {
+    firstDayOfWeek: 0,
+    dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+    dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+    dayNamesMin: ['Do', 'Se', 'Te', 'Qa', 'Qi', 'Se', 'Sa'],
+    monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
+      'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+    today: 'Hoje',
+    clear: 'Limpar'
+  };
+
   constructor(
     private entryService: EntryService,
+    private categoryService: CategoryService,
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder
@@ -31,10 +57,15 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
     this.setCurrentAction();
     this.buldEntryForm();
     this.loadEntry();
+    this.LoadCategories();
   }
 
   ngAfterContentChecked(): void {
     this.setPageTitle();
+  }
+
+  private LoadCategories() {
+    this.categoryService.getAll().subscribe(categories => this.categories = categories);
   }
 
   private setCurrentAction() {
@@ -45,13 +76,23 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
       this.currentAction = 'new';
     }
   }
+
+  get typeOptions(): Array<any> {
+    return Object.entries(Entry.types).map(
+      ([value, text]) => {
+        return {
+          text: text,
+          value: value
+        };
+      });
+  }
   private buldEntryForm() {
     this.entryForm = this.fb.group({
       id: [null],
       name: [null, [Validators.required, Validators.minLength(2)]],
       description: [null],
       type: [null, [Validators.required]],
-      amont: [null, [Validators.required]],
+      amount: [null, [Validators.required]],
       date: [null, [Validators.required]],
       paid: [null, [Validators.required]],
       categoryId: [null, [Validators.required]]

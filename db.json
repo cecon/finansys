@@ -11,5 +11,16 @@
       "description": "Gastos com restaurantes e mercado"
     }
   ],
-  "entries": []
+  "entries": [
+    {
+      "id": 1,
+      "name": "Alimentação",
+      "description": "asdsdsds",
+      "type": "expense",
+      "amount": "10,00",
+      "date": "04/12/2018",
+      "paid": false,
+      "categoryId": "6"
+    }
+  ]
 }
