@@ -45,11 +45,11 @@
       "amount": "10,00",
       "date": "17/12/2018",
       "paid": true,
-      "categoryId": "5",
+      "categoryId": "6",
       "category": {
-        "id": 5,
-        "name": "Freelas",
-        "description": "Trabalhos como freelancer"
+        "id": 6,
+        "name": "Alimentação",
+        "description": "Gastos com restaurantes e mercado"
       }
     }
   ]
